@@ -1,186 +1,231 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Creative Agency</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
-        /* Menggunakan Lora untuk Heading & Inter untuk teks paragraf */
+        /* Typography Setup */
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap');
         
-        body { font-family: 'Inter', sans-serif; }
+        body { font-family: 'Inter', sans-serif; overflow-x: hidden; }
         h1, h2, h3, .font-heading { font-family: 'Lora', serif; }
         
-        /* Palet Warna Hijau Tua (Dark Green) & Latar Belakang Terang */
+        /* Custom Colors */
         .bg-base-light { background-color: #F4F6F4; }
         .bg-dark-green { background-color: #1B3C2D; }
         .text-dark-green { color: #1B3C2D; }
     </style>
 </head>
-<body class="bg-base-light text-gray-800">
+<body class="bg-base-light text-gray-800 antialiased selection:bg-[#1B3C2D] selection:text-white">
 
-    <nav class="flex justify-center space-x-10 py-8 text-dark-green font-medium tracking-wide">
-        <a href="#" class="hover:opacity-70 transition">Who We Are</a>
-        <a href="#" class="hover:opacity-70 transition">Our Portfolio</a>
-        <a href="#" class="hover:opacity-70 transition">Get in Touch</a>
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-5">
+        <div class="max-w-6xl mx-auto px-6 flex justify-between md:justify-center items-center md:space-x-12 text-dark-green font-medium tracking-wide">
+            <div class="md:hidden font-heading font-semibold text-xl">Agency.</div>
+            
+            <div class="hidden md:flex space-x-10 items-center">
+                <a href="#about" class="hover:opacity-60 transition duration-300">Who We Are</a>
+                <a href="#capabilities" class="hover:opacity-60 transition duration-300">Capabilities</a>
+                <a href="#works" class="hover:opacity-60 transition duration-300">Our Portfolio</a>
+                <a href="#contact" class="hover:opacity-60 transition duration-300">Get in Touch</a>
+            </div>
+
+            <div class="md:hidden text-2xl cursor-pointer">☰</div>
+        </div>
     </nav>
 
-    <section class="max-w-5xl mx-auto px-6 py-16 flex flex-col md:flex-row items-center gap-14">
-        <div class="md:w-1/2 flex justify-center">
-            <div class="border-2 border-[#1B3C2D] rounded-2xl w-64 h-80 flex flex-col items-center justify-center p-6 bg-white shadow-sm">
-                <div class="w-16 h-16 bg-dark-green rounded-full mb-4 flex items-center justify-center">
-                    <span class="text-white text-2xl">✨</span>
+    <section id="about" class="pt-32 pb-20 max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center gap-16 min-h-screen">
+        <div class="w-full md:w-1/2 flex justify-center order-2 md:order-1" data-aos="fade-right" data-aos-duration="1000">
+            <div class="border-2 border-[#1B3C2D] rounded-[2rem] w-72 h-96 flex flex-col items-center justify-center p-8 bg-white shadow-xl shadow-[#1b3c2d]/5 relative group overflow-hidden">
+                <div class="absolute inset-0 bg-[#1B3C2D] opacity-0 group-hover:opacity-5 transition duration-500"></div>
+                <div class="w-20 h-20 bg-dark-green rounded-2xl rotate-12 group-hover:rotate-0 transition duration-500 mb-8 flex items-center justify-center shadow-lg">
+                    <span class="text-white text-3xl">✨</span>
                 </div>
-                <p class="text-dark-green font-heading text-2xl text-center font-medium">Brand<br>Identity</p>
+                <p class="text-dark-green font-heading text-3xl text-center font-medium leading-snug">AI-Powered<br>Creative</p>
             </div>
         </div>
-        <div class="md:w-1/2">
-            <h2 class="text-dark-green font-heading text-4xl mb-6 font-medium">About the Agency</h2>
-            <p class="text-sm leading-relaxed mb-5 text-gray-600">
+        <div class="w-full md:w-1/2 order-1 md:order-2 text-center md:text-left" data-aos="fade-up" data-aos-duration="1000">
+            <div class="inline-block px-4 py-1.5 rounded-full border border-dark-green/30 text-dark-green text-xs font-semibold tracking-widest uppercase mb-6">
+                The New Standard
+            </div>
+            <h1 class="text-dark-green font-heading text-5xl md:text-6xl mb-6 font-medium leading-tight">Beyond<br>Conventional Agency.</h1>
+            <p class="text-base leading-relaxed mb-5 text-gray-600 max-w-lg mx-auto md:mx-0">
                 As a pioneering AI-driven creative agency, we empower brands to scale through rapid, cohesive, and highly targeted content. 
             </p>
-            <p class="text-sm leading-relaxed mb-5 text-gray-600">
-                By merging advanced AI capabilities with seasoned branding expertise, we deliver premium, perfectly aligned results without the traditional agency overhead.
+            <p class="text-base leading-relaxed mb-8 text-gray-600 max-w-lg mx-auto md:mx-0">
+                By merging advanced AI capabilities with seasoned branding expertise, we deliver premium, perfectly aligned results without the traditional agency overhead. Let’s make your brand impossible to ignore.
             </p>
-            <p class="text-sm font-semibold leading-relaxed mb-8 text-dark-green">
-                Let’s make your brand impossible to ignore.
-            </p>
-            <div class="flex space-x-4">
-                <button class="bg-[#1B3C2D] hover:bg-[#122b20] transition text-white px-7 py-3 rounded-full text-sm font-medium shadow-md">Start Consultation</button>
-                <button class="border border-[#1B3C2D] hover:bg-dark-green hover:text-white transition text-dark-green px-7 py-3 rounded-full text-sm font-medium">View Portfolio</button>
+            <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center md:justify-start">
+                <a href="#contact" class="bg-[#1B3C2D] hover:bg-[#122b20] transition-all duration-300 text-white px-8 py-3.5 rounded-full text-sm font-medium shadow-lg hover:shadow-xl hover:-translate-y-0.5 text-center">Start Consultation</a>
+                <a href="#works" class="border border-[#1B3C2D] hover:bg-dark-green hover:text-white transition-all duration-300 text-dark-green px-8 py-3.5 rounded-full text-sm font-medium text-center">View Portfolio</a>
             </div>
         </div>
     </section>
 
-    <section class="bg-dark-green text-white py-24 relative overflow-hidden">
-        <div class="max-w-4xl mx-auto px-6 text-center mb-24">
-            <h2 class="font-heading text-4xl mb-6">Our Capabilities</h2>
-            <p class="text-sm max-w-2xl mx-auto text-gray-200 leading-relaxed">
-                We go beyond simple reach to build genuine relevance. Our comprehensive suite of creative services utilizes AI-enhanced workflows to forge deep, lasting connections between your brand and your target audience.
+    <section id="capabilities" class="bg-dark-green text-white py-24 relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden opacity-10 pointer-events-none">
+            <div class="absolute -top-20 -right-20 w-96 h-96 rounded-full border border-white"></div>
+            <div class="absolute bottom-10 -left-10 w-64 h-64 rounded-full border border-white"></div>
+        </div>
+
+        <div class="max-w-4xl mx-auto px-6 text-center mb-20 md:mb-32 relative z-10" data-aos="fade-up">
+            <h2 class="font-heading text-4xl md:text-5xl mb-6">Our Capabilities</h2>
+            <p class="text-base max-w-2xl mx-auto text-gray-300 leading-relaxed">
+                We go beyond simple reach to build genuine relevance. Our comprehensive suite of creative services utilizes AI-enhanced workflows to forge deep, lasting connections.
             </p>
         </div>
 
-        <div class="relative max-w-5xl mx-auto px-6">
-            <div class="absolute left-1/2 transform -translate-x-1/2 w-[1px] h-full bg-white opacity-20"></div>
+        <div class="relative max-w-5xl mx-auto px-6 z-10">
+            <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-[1px] h-[90%] bg-gradient-to-b from-transparent via-white/30 to-transparent top-5"></div>
 
-            <div class="flex items-center justify-between mb-24 w-full relative group">
-                <div class="w-5/12 text-right pr-12">
-                    <div class="inline-block border border-white/30 rounded-2xl w-24 h-24 mb-6 flex items-center justify-center bg-white/5 group-hover:bg-white/10 transition">
-                        <span class="text-3xl">🎯</span>
+            <div class="flex flex-col md:flex-row items-center justify-between mb-16 md:mb-24 w-full group" data-aos="fade-up">
+                <div class="w-full md:w-5/12 text-center md:text-right md:pr-12 mb-6 md:mb-0">
+                    <div class="inline-flex border border-white/20 rounded-2xl w-20 h-20 mb-6 items-center justify-center bg-white/5 group-hover:bg-white/10 transition-colors duration-300 shadow-lg">
+                        <span class="text-2xl">🎯</span>
                     </div>
-                    <h3 class="font-heading text-2xl mb-3">Brand Strategy</h3>
+                    <h3 class="font-heading text-2xl md:text-3xl mb-3">Brand Strategy</h3>
                     <p class="text-sm text-gray-300 leading-relaxed">We define your brand's core identity, establishing a distinct voice, cohesive visual style, and strong content pillars that resonate with your market.</p>
                 </div>
-                <div class="w-2/12 flex justify-center">
-                    <div class="w-4 h-4 bg-white rounded-full z-10 shadow-[0_0_15px_rgba(255,255,255,0.5)]"></div>
+                <div class="hidden md:flex w-2/12 justify-center">
+                    <div class="w-4 h-4 bg-white rounded-full shadow-[0_0_15px_rgba(255,255,255,0.6)] group-hover:scale-150 transition-transform duration-300"></div>
                 </div>
-                <div class="w-5/12"></div>
+                <div class="hidden md:block w-5/12"></div>
             </div>
 
-            <div class="flex items-center justify-between mb-24 w-full relative group">
-                <div class="w-5/12"></div>
-                <div class="w-2/12 flex justify-center">
-                    <div class="w-4 h-4 bg-white rounded-full z-10 shadow-[0_0_15px_rgba(255,255,255,0.5)]"></div>
+            <div class="flex flex-col md:flex-row items-center justify-between mb-16 md:mb-24 w-full group" data-aos="fade-up" data-aos-delay="100">
+                <div class="hidden md:block w-5/12"></div>
+                <div class="hidden md:flex w-2/12 justify-center">
+                    <div class="w-4 h-4 bg-white rounded-full shadow-[0_0_15px_rgba(255,255,255,0.6)] group-hover:scale-150 transition-transform duration-300"></div>
                 </div>
-                <div class="w-5/12 text-left pl-12">
-                    <div class="inline-block border border-white/30 rounded-2xl w-24 h-24 mb-6 flex items-center justify-center bg-white/5 group-hover:bg-white/10 transition">
-                        <span class="text-3xl">📱</span>
+                <div class="w-full md:w-5/12 text-center md:text-left md:pl-12">
+                    <div class="inline-flex border border-white/20 rounded-2xl w-20 h-20 mb-6 items-center justify-center bg-white/5 group-hover:bg-white/10 transition-colors duration-300 shadow-lg">
+                        <span class="text-2xl">📱</span>
                     </div>
-                    <h3 class="font-heading text-2xl mb-3">Social Media<br>Ecosystem</h3>
-                    <p class="text-sm text-gray-300 leading-relaxed">Consistency is key to audience engagement. We leverage AI to accelerate content creation while our specialists ensure every post remains perfectly aligned with your identity.</p>
+                    <h3 class="font-heading text-2xl md:text-3xl mb-3">Social Media<br class="hidden md:block">Ecosystem</h3>
+                    <p class="text-sm text-gray-300 leading-relaxed">Consistency is key. We leverage AI to accelerate content creation while our specialists ensure every post remains perfectly aligned with your identity.</p>
                 </div>
             </div>
 
-            <div class="flex items-center justify-between mb-24 w-full relative group">
-                <div class="w-5/12 text-right pr-12">
-                    <div class="inline-block border border-white/30 rounded-2xl w-24 h-24 mb-6 flex items-center justify-center bg-white/5 group-hover:bg-white/10 transition">
-                        <span class="text-3xl">📸</span>
+            <div class="flex flex-col md:flex-row items-center justify-between mb-16 md:mb-24 w-full group" data-aos="fade-up">
+                <div class="w-full md:w-5/12 text-center md:text-right md:pr-12 mb-6 md:mb-0">
+                    <div class="inline-flex border border-white/20 rounded-2xl w-20 h-20 mb-6 items-center justify-center bg-white/5 group-hover:bg-white/10 transition-colors duration-300 shadow-lg">
+                        <span class="text-2xl">📸</span>
                     </div>
-                    <h3 class="font-heading text-2xl mb-3">AI Photography</h3>
-                    <p class="text-sm text-gray-300 leading-relaxed">Elevate ordinary product shots into stunning commercial imagery. Through AI enhancement and expert retouching, we perfect lighting and composition to reflect your premium standard.</p>
+                    <h3 class="font-heading text-2xl md:text-3xl mb-3">AI Photography</h3>
+                    <p class="text-sm text-gray-300 leading-relaxed">Elevate ordinary product shots into stunning commercial imagery. Through AI enhancement and expert retouching, we perfect lighting and composition.</p>
                 </div>
-                <div class="w-2/12 flex justify-center">
-                    <div class="w-4 h-4 bg-white rounded-full z-10 shadow-[0_0_15px_rgba(255,255,255,0.5)]"></div>
+                <div class="hidden md:flex w-2/12 justify-center">
+                    <div class="w-4 h-4 bg-white rounded-full shadow-[0_0_15px_rgba(255,255,255,0.6)] group-hover:scale-150 transition-transform duration-300"></div>
                 </div>
-                <div class="w-5/12"></div>
+                <div class="hidden md:block w-5/12"></div>
             </div>
             
-            <div class="flex items-center justify-between mb-24 w-full relative group">
-                <div class="w-5/12"></div>
-                <div class="w-2/12 flex justify-center">
-                    <div class="w-4 h-4 bg-white rounded-full z-10 shadow-[0_0_15px_rgba(255,255,255,0.5)]"></div>
+            <div class="flex flex-col md:flex-row items-center justify-between mb-16 md:mb-24 w-full group" data-aos="fade-up" data-aos-delay="100">
+                <div class="hidden md:block w-5/12"></div>
+                <div class="hidden md:flex w-2/12 justify-center">
+                    <div class="w-4 h-4 bg-white rounded-full shadow-[0_0_15px_rgba(255,255,255,0.6)] group-hover:scale-150 transition-transform duration-300"></div>
                 </div>
-                <div class="w-5/12 text-left pl-12">
-                    <div class="inline-block border border-white/30 rounded-2xl w-24 h-24 mb-6 flex items-center justify-center bg-white/5 group-hover:bg-white/10 transition">
-                        <span class="text-3xl">🎥</span>
+                <div class="w-full md:w-5/12 text-center md:text-left md:pl-12">
+                    <div class="inline-flex border border-white/20 rounded-2xl w-20 h-20 mb-6 items-center justify-center bg-white/5 group-hover:bg-white/10 transition-colors duration-300 shadow-lg">
+                        <span class="text-2xl">🎥</span>
                     </div>
-                    <h3 class="font-heading text-2xl mb-3">Dynamic Videography</h3>
+                    <h3 class="font-heading text-2xl md:text-3xl mb-3">Dynamic Videography</h3>
                     <p class="text-sm text-gray-300 leading-relaxed">Turn static elements into dynamic, commercial-grade videos. We develop compelling hooks and seamless motion graphics to ensure your message drives real action.</p>
                 </div>
             </div>
 
-            <div class="flex items-center justify-between w-full relative group">
-                <div class="w-5/12 text-right pr-12">
-                    <div class="inline-block border border-white/30 rounded-2xl w-24 h-24 mb-6 flex items-center justify-center bg-white/5 group-hover:bg-white/10 transition">
-                        <span class="text-3xl">🚀</span>
+            <div class="flex flex-col md:flex-row items-center justify-between w-full group" data-aos="fade-up">
+                <div class="w-full md:w-5/12 text-center md:text-right md:pr-12 mb-6 md:mb-0">
+                    <div class="inline-flex border border-white/20 rounded-2xl w-20 h-20 mb-6 items-center justify-center bg-white/5 group-hover:bg-white/10 transition-colors duration-300 shadow-lg">
+                        <span class="text-2xl">🚀</span>
                     </div>
-                    <h3 class="font-heading text-2xl mb-3">Short-Form Content</h3>
+                    <h3 class="font-heading text-2xl md:text-3xl mb-3">Short-Form Content</h3>
                     <p class="text-sm text-gray-300 leading-relaxed">Dominate TikTok and Reels. We guide you entirely from brainstorming engaging storylines to selecting trending audio and executing viral-worthy content.</p>
                 </div>
-                <div class="w-2/12 flex justify-center">
-                    <div class="w-4 h-4 bg-white rounded-full z-10 shadow-[0_0_15px_rgba(255,255,255,0.5)]"></div>
+                <div class="hidden md:flex w-2/12 justify-center">
+                    <div class="w-4 h-4 bg-white rounded-full shadow-[0_0_15px_rgba(255,255,255,0.6)] group-hover:scale-150 transition-transform duration-300"></div>
                 </div>
-                <div class="w-5/12"></div>
+                <div class="hidden md:block w-5/12"></div>
             </div>
         </div>
     </section>
 
-    <section class="py-24 bg-gradient-to-b from-[#1B3C2D] to-[#F4F6F4] text-center">
-        <div class="max-w-2xl mx-auto px-6 mb-14">
-            <h2 class="font-heading text-4xl text-white mb-6">Featured Projects</h2>
-            <p class="text-gray-200 text-sm leading-relaxed mb-8">
-                Explore our portfolio to see how strategic thinking and scroll-stopping visuals have elevated our clients' digital presence.
+    <section id="works" class="py-24 bg-gradient-to-b from-[#1B3C2D] to-[#F4F6F4] text-center px-6">
+        <div class="max-w-3xl mx-auto mb-16" data-aos="fade-up">
+            <h2 class="font-heading text-4xl md:text-5xl text-white mb-6">Featured Projects</h2>
+            <p class="text-gray-200 text-base leading-relaxed mb-10">
+                Explore our portfolio to see how strategic thinking, AI technology, and scroll-stopping visuals have elevated our clients' digital presence.
             </p>
-            <button class="bg-white hover:bg-gray-100 transition text-dark-green px-8 py-3 rounded-full text-sm font-semibold shadow-lg">Discover Our Work</button>
         </div>
 
-        <div class="max-w-6xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-4">
-            <div class="bg-white h-60 flex flex-col items-center justify-center rounded-xl shadow-sm hover:shadow-lg transition cursor-pointer overflow-hidden border border-gray-100">
-                <span class="text-gray-400 font-medium text-sm">Campaign 1</span>
+        <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+            <div class="group bg-white h-72 flex flex-col items-center justify-center rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer overflow-hidden border border-gray-100 relative" data-aos="fade-up" data-aos-delay="0">
+                <div class="absolute inset-0 bg-gray-100 group-hover:scale-105 transition-transform duration-500"></div>
+                <span class="text-gray-500 font-medium z-10 bg-white/80 px-4 py-2 rounded-full backdrop-blur-sm">Campaign 1</span>
             </div>
-            <div class="bg-white h-60 flex flex-col items-center justify-center rounded-xl shadow-sm hover:shadow-lg transition cursor-pointer overflow-hidden border border-gray-100">
-                <span class="text-gray-400 font-medium text-sm">Campaign 2</span>
+            <div class="group bg-white h-72 flex flex-col items-center justify-center rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer overflow-hidden border border-gray-100 relative" data-aos="fade-up" data-aos-delay="100">
+                <div class="absolute inset-0 bg-gray-100 group-hover:scale-105 transition-transform duration-500"></div>
+                <span class="text-gray-500 font-medium z-10 bg-white/80 px-4 py-2 rounded-full backdrop-blur-sm">Campaign 2</span>
             </div>
-            <div class="bg-white h-60 flex flex-col items-center justify-center rounded-xl shadow-sm hover:shadow-lg transition cursor-pointer overflow-hidden border border-gray-100">
-                <span class="text-gray-400 font-medium text-sm">Campaign 3</span>
+            <div class="group bg-white h-72 flex flex-col items-center justify-center rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer overflow-hidden border border-gray-100 relative" data-aos="fade-up" data-aos-delay="200">
+                <div class="absolute inset-0 bg-gray-100 group-hover:scale-105 transition-transform duration-500"></div>
+                <span class="text-gray-500 font-medium z-10 bg-white/80 px-4 py-2 rounded-full backdrop-blur-sm">Campaign 3</span>
             </div>
-            <div class="bg-dark-green h-60 flex flex-col items-center justify-center rounded-xl shadow-sm hover:opacity-90 transition cursor-pointer overflow-hidden">
-                <span class="text-white font-medium text-sm">View More Projects ➔</span>
+            <div class="group bg-dark-green h-72 flex flex-col items-center justify-center rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-pointer overflow-hidden relative" data-aos="fade-up" data-aos-delay="300">
+                <span class="text-white font-medium text-lg z-10 flex items-center gap-2">View All <span class="group-hover:translate-x-2 transition-transform duration-300">➔</span></span>
             </div>
         </div>
     </section>
 
-    <section class="max-w-5xl mx-auto px-6 py-24 flex flex-col md:flex-row items-center gap-14 justify-between">
-        <div class="md:w-1/2 flex justify-center">
-            <div class="w-64 h-48 border border-gray-200 bg-white rounded-3xl flex flex-col items-center justify-center relative shadow-sm">
-                <span class="text-dark-green text-5xl mb-4">🤝</span>
-                <span class="text-dark-green text-lg font-heading font-medium">Ready to scale?</span>
+    <section id="contact" class="max-w-6xl mx-auto px-6 py-24 flex flex-col md:flex-row items-center gap-16 justify-between">
+        <div class="w-full md:w-1/2 flex justify-center" data-aos="fade-right">
+            <div class="w-full max-w-sm h-64 border border-gray-200 bg-white rounded-[2rem] flex flex-col items-center justify-center relative shadow-xl shadow-gray-200/50 p-8 text-center">
+                <div class="absolute -top-6 -left-6 w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center text-xl">💡</div>
+                <span class="text-dark-green text-5xl mb-6 block">🤝</span>
+                <span class="text-dark-green text-2xl font-heading font-medium">Ready to scale?</span>
+                <p class="text-sm text-gray-500 mt-2">Let's build something great.</p>
             </div>
         </div>
-        <div class="md:w-1/2">
-            <h2 class="text-dark-green font-heading text-4xl mb-5">Book a Free Discovery Call</h2>
-            <p class="text-sm text-gray-600 mb-8 leading-relaxed">
+        <div class="w-full md:w-1/2 text-center md:text-left" data-aos="fade-left">
+            <h2 class="text-dark-green font-heading text-4xl md:text-5xl mb-6 leading-tight">Book a Free<br>Discovery Call</h2>
+            <p class="text-base text-gray-600 mb-10 leading-relaxed max-w-md mx-auto md:mx-0">
                 Let's discuss how our AI-powered creative engine can streamline your workflow and help your brand achieve its goals faster.
             </p>
-            <div class="flex flex-wrap gap-4">
-                <button class="bg-[#1B3C2D] hover:bg-[#122b20] transition text-white px-8 py-3.5 rounded-full text-sm font-medium shadow-md">Schedule a Meeting</button>
-                <button class="bg-white border border-[#1B3C2D] hover:bg-gray-50 transition text-dark-green px-8 py-3.5 rounded-full text-sm font-medium flex items-center gap-2">
+            <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                <button class="bg-[#1B3C2D] hover:bg-[#122b20] transition-all duration-300 text-white px-8 py-4 rounded-full text-sm font-medium shadow-lg hover:shadow-xl hover:-translate-y-0.5">Schedule a Meeting</button>
+                <button class="bg-white border border-[#1B3C2D] hover:bg-gray-50 transition-all duration-300 text-dark-green px-8 py-4 rounded-full text-sm font-medium flex items-center justify-center gap-2 hover:-translate-y-0.5">
+                    <span class="text-green-600 text-lg">📱</span>
                     <span>Chat on WhatsApp</span>
                 </button>
             </div>
         </div>
     </section>
 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize Animations
+        AOS.init({
+            once: true, // Animasi hanya berjalan sekali saat di-scroll
+            offset: 50, // Muncul sedikit lebih cepat sebelum elemen masuk layar
+            duration: 800, // Durasi animasi
+            easing: 'ease-out-cubic',
+        });
+
+        // Script untuk Navbar (Glassmorphism on Scroll)
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                navbar.classList.add('bg-base-light/80', 'backdrop-blur-md', 'shadow-sm');
+                navbar.classList.remove('py-5');
+                navbar.classList.add('py-3');
+            } else {
+                navbar.classList.remove('bg-base-light/80', 'backdrop-blur-md', 'shadow-sm');
+                navbar.classList.remove('py-3');
+                navbar.classList.add('py-5');
+            }
+        });
+    </script>
 </body>
 </html>
