@@ -3,201 +3,257 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Creative Agency</title>
+    <title>AI Creative Agency - Proposal View</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
         /* Typography Setup */
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+        /* Menggunakan weight yang lebih spesifik untuk kontrol elegan */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Lora:ital,wght@0,400;0,500;1,400&display=swap');
         
         body { font-family: 'Inter', sans-serif; overflow-x: hidden; }
         h1, h2, h3, .font-heading { font-family: 'Lora', serif; }
         
         /* Custom Colors */
-        .bg-base-light { background-color: #F4F6F4; }
-        .bg-dark-green { background-color: #1B3C2D; }
-        .text-dark-green { color: #1B3C2D; }
+        .bg-base-light { background-color: #F8F9F8; /* Sedikit lebih terang agar lebih bersih */ }
+        .bg-dark-green { background-color: #1A382A; /* Sedikit lebih gelap untuk kontras premium */ }
+        .text-dark-green { color: #1A382A; }
+
+        /* Utility untuk placeholder gambar premium */
+        .image-placeholder-gradient {
+            background: linear-gradient(45deg, #f3f4f6 25%, #e5e7eb 50%, #f3f4f6 75%);
+            background-size: 200% 200%;
+            animation: shimmer 10s ease infinite;
+        }
+        @keyframes shimmer {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
     </style>
 </head>
-<body class="bg-base-light text-gray-800 antialiased selection:bg-[#1B3C2D] selection:text-white">
+<body class="bg-base-light text-gray-700 antialiased selection:bg-[#1A382A] selection:text-white">
 
-    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-5">
-        <div class="max-w-6xl mx-auto px-6 flex justify-between md:justify-center items-center md:space-x-12 text-dark-green font-medium tracking-wide">
-            <div class="md:hidden font-heading font-semibold text-xl">Agency.</div>
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-500 py-6">
+        <div class="max-w-6xl mx-auto px-8 flex justify-between md:justify-center items-center md:space-x-14 text-dark-green font-medium tracking-wider text-sm uppercase">
+            <div class="md:hidden font-heading font-semibold text-2xl normal-case">Agency.</div>
             
-            <div class="hidden md:flex space-x-10 items-center">
-                <a href="#about" class="hover:opacity-60 transition duration-300">Who We Are</a>
-                <a href="#capabilities" class="hover:opacity-60 transition duration-300">Capabilities</a>
-                <a href="#works" class="hover:opacity-60 transition duration-300">Our Portfolio</a>
-                <a href="#contact" class="hover:opacity-60 transition duration-300">Get in Touch</a>
+            <div class="hidden md:flex space-x-12 items-center">
+                <a href="#about" class="hover:text-dark-green/70 transition duration-300 relative group">
+                    Who We Are
+                    <span class="absolute -bottom-1 left-0 w-0 h-px bg-dark-green transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#capabilities" class="hover:text-dark-green/70 transition duration-300 relative group">
+                    Capabilities
+                    <span class="absolute -bottom-1 left-0 w-0 h-px bg-dark-green transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#works" class="hover:text-dark-green/70 transition duration-300 relative group">
+                    Portfolio
+                    <span class="absolute -bottom-1 left-0 w-0 h-px bg-dark-green transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#contact" class="hover:text-dark-green/70 transition duration-300 relative group">
+                    Contact
+                    <span class="absolute -bottom-1 left-0 w-0 h-px bg-dark-green transition-all duration-300 group-hover:w-full"></span>
+                </a>
             </div>
 
-            <div class="md:hidden text-2xl cursor-pointer">☰</div>
+            <div class="md:hidden text-2xl cursor-pointer">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 9h16.5m-16.5 6.75h16.5" />
+                </svg>
+            </div>
         </div>
     </nav>
 
-    <section id="about" class="pt-32 pb-20 max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center gap-16 min-h-screen">
-        <div class="w-full md:w-1/2 flex justify-center order-2 md:order-1" data-aos="fade-right" data-aos-duration="1000">
-            <div class="border-2 border-[#1B3C2D] rounded-[2rem] w-72 h-96 flex flex-col items-center justify-center p-8 bg-white shadow-xl shadow-[#1b3c2d]/5 relative group overflow-hidden">
-                <div class="absolute inset-0 bg-[#1B3C2D] opacity-0 group-hover:opacity-5 transition duration-500"></div>
-                <div class="w-20 h-20 bg-dark-green rounded-2xl rotate-12 group-hover:rotate-0 transition duration-500 mb-8 flex items-center justify-center shadow-lg">
-                    <span class="text-white text-3xl">✨</span>
+    <section id="about" class="pt-36 pb-24 max-w-6xl mx-auto px-8 flex flex-col md:flex-row items-center gap-20 min-h-[90vh]">
+        <div class="w-full md:w-1/2 flex justify-center order-2 md:order-1" data-aos="fade-right" data-aos-duration="1200" data-aos-delay="200">
+            <div class="relative w-[85%] md:w-[90%] aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl shadow-[#1A382A]/10 border-4 border-white/50 image-placeholder-gradient group">
+                <div class="absolute inset-0 flex flex-col items-center justify-center text-center p-6 bg-dark-green/10 group-hover:bg-dark-green/20 transition duration-500">
+                    <p class="text-dark-green/60 font-heading italic text-xl">Place High-End<br>AI Visual Here</p>
                 </div>
-                <p class="text-dark-green font-heading text-3xl text-center font-medium leading-snug">AI-Powered<br>Creative</p>
+                <div class="absolute bottom-8 right-8 w-24 h-24 bg-dark-green/90 backdrop-blur-md rounded-2xl flex items-center justify-center shadow-lg">
+                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10 text-white">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09Z" />
+                    </svg>
+                </div>
             </div>
         </div>
+        
         <div class="w-full md:w-1/2 order-1 md:order-2 text-center md:text-left" data-aos="fade-up" data-aos-duration="1000">
-            <div class="inline-block px-4 py-1.5 rounded-full border border-dark-green/30 text-dark-green text-xs font-semibold tracking-widest uppercase mb-6">
+            <div class="inline-block px-5 py-2 rounded-full bg-[#1A382A]/5 text-dark-green text-xs font-bold tracking-[0.2em] uppercase mb-8">
                 The New Standard
             </div>
-            <h1 class="text-dark-green font-heading text-5xl md:text-6xl mb-6 font-medium leading-tight">Beyond<br>Conventional Agency.</h1>
-            <p class="text-base leading-relaxed mb-5 text-gray-600 max-w-lg mx-auto md:mx-0">
-                As a pioneering AI-driven creative agency, we empower brands to scale through rapid, cohesive, and highly targeted content. 
+            <h1 class="text-dark-green font-heading text-6xl md:text-7xl mb-8 font-normal leading-tight tracking-tight">
+                Redefining<br>Agency.
+            </h1>
+            <p class="text-lg leading-loose mb-6 text-gray-600 max-w-xl mx-auto md:mx-0 font-light">
+                As a pioneering AI-driven creative partners, we empower brands to scale through rapid, cohesive, and highly targeted content without compromise.
             </p>
-            <p class="text-base leading-relaxed mb-8 text-gray-600 max-w-lg mx-auto md:mx-0">
-                By merging advanced AI capabilities with seasoned branding expertise, we deliver premium, perfectly aligned results without the traditional agency overhead. Let’s make your brand impossible to ignore.
+            <p class="text-lg leading-loose mb-12 text-gray-600 max-w-xl mx-auto md:mx-0 font-light">
+                Merging advanced generative models with seasoned branding expertise to deliver premium results at unprecedented speed.
             </p>
-            <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center md:justify-start">
-                <a href="#contact" class="bg-[#1B3C2D] hover:bg-[#122b20] transition-all duration-300 text-white px-8 py-3.5 rounded-full text-sm font-medium shadow-lg hover:shadow-xl hover:-translate-y-0.5 text-center">Start Consultation</a>
-                <a href="#works" class="border border-[#1B3C2D] hover:bg-dark-green hover:text-white transition-all duration-300 text-dark-green px-8 py-3.5 rounded-full text-sm font-medium text-center">View Portfolio</a>
+            <div class="flex flex-col sm:flex-row space-y-5 sm:space-y-0 sm:space-x-6 justify-center md:justify-start">
+                <button class="bg-[#1A382A] hover:bg-[#12281e] transition-all duration-300 text-white px-10 py-4 rounded-full text-sm font-medium tracking-wider shadow-lg hover:shadow-xl hover:-translate-y-1">Begin Consultation</button>
+                <button class="group border border-[#1A382A]/30 hover:border-[#1A382A] text-dark-green px-10 py-4 rounded-full text-sm font-medium tracking-wider flex items-center justify-center gap-3 transition-all duration-300 bg-transparent hover:bg-[#1A382A]/5">
+                    View Portfolio
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 group-hover:translate-x-1 transition-transform">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                    </svg>
+                </button>
             </div>
         </div>
     </section>
 
-    <section id="capabilities" class="bg-dark-green text-white py-24 relative overflow-hidden">
-        <div class="absolute top-0 left-0 w-full h-full overflow-hidden opacity-10 pointer-events-none">
-            <div class="absolute -top-20 -right-20 w-96 h-96 rounded-full border border-white"></div>
-            <div class="absolute bottom-10 -left-10 w-64 h-64 rounded-full border border-white"></div>
-        </div>
+    <section id="capabilities" class="bg-dark-green text-white py-32 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-[0.03]" style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
 
-        <div class="max-w-4xl mx-auto px-6 text-center mb-20 md:mb-32 relative z-10" data-aos="fade-up">
-            <h2 class="font-heading text-4xl md:text-5xl mb-6">Our Capabilities</h2>
-            <p class="text-base max-w-2xl mx-auto text-gray-300 leading-relaxed">
-                We go beyond simple reach to build genuine relevance. Our comprehensive suite of creative services utilizes AI-enhanced workflows to forge deep, lasting connections.
+        <div class="max-w-4xl mx-auto px-8 text-center mb-28 relative z-10" data-aos="fade-up">
+            <h2 class="font-heading text-5xl md:text-6xl mb-8 font-normal">Our Capabilities</h2>
+            <p class="text-lg max-w-3xl mx-auto text-white/80 leading-relaxed font-light">
+                We go beyond simple reach to build genuine relevance. Discover our suite of AI-enhanced creative services designed for the modern brand.
             </p>
         </div>
 
-        <div class="relative max-w-5xl mx-auto px-6 z-10">
-            <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-[1px] h-[90%] bg-gradient-to-b from-transparent via-white/30 to-transparent top-5"></div>
+        <div class="relative max-w-6xl mx-auto px-8 z-10">
+            <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-px h-[95%] bg-gradient-to-b from-transparent via-white/20 to-transparent top-0"></div>
 
-            <div class="flex flex-col md:flex-row items-center justify-between mb-16 md:mb-24 w-full group" data-aos="fade-up">
-                <div class="w-full md:w-5/12 text-center md:text-right md:pr-12 mb-6 md:mb-0">
-                    <div class="inline-flex border border-white/20 rounded-2xl w-20 h-20 mb-6 items-center justify-center bg-white/5 group-hover:bg-white/10 transition-colors duration-300 shadow-lg">
-                        <span class="text-2xl">🎯</span>
+            <div class="flex flex-col md:flex-row items-start justify-between mb-24 w-full group" data-aos="fade-up">
+                <div class="w-full md:w-5/12 text-center md:text-right md:pr-16 mb-10 md:mb-0">
+                    <div class="inline-flex border border-white/10 rounded-3xl w-24 h-24 mb-8 items-center justify-center bg-white/5 group-hover:bg-white/10 transition-colors duration-500 shadow-2xl shadow-black/20 backdrop-blur-sm">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" class="w-10 h-10 text-white/90">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+                        </svg>
                     </div>
-                    <h3 class="font-heading text-2xl md:text-3xl mb-3">Brand Strategy</h3>
-                    <p class="text-sm text-gray-300 leading-relaxed">We define your brand's core identity, establishing a distinct voice, cohesive visual style, and strong content pillars that resonate with your market.</p>
+                    <h3 class="font-heading text-3xl mb-4 font-normal">Brand Strategy</h3>
+                    <p class="text-base text-white/70 leading-loose font-light">Defining core identity, distinct voice, cohesive visual style, and strong content pillars that resonate deeply with your market.</p>
                 </div>
-                <div class="hidden md:flex w-2/12 justify-center">
-                    <div class="w-4 h-4 bg-white rounded-full shadow-[0_0_15px_rgba(255,255,255,0.6)] group-hover:scale-150 transition-transform duration-300"></div>
+                <div class="hidden md:flex w-2/12 justify-center relative pt-10">
+                    <div class="w-3 h-3 bg-white rounded-full shadow-[0_0_20px_rgba(255,255,255,0.8)] group-hover:scale-125 transition-transform duration-500 relative z-10"></div>
+                    <div class="absolute w-8 h-8 bg-white/10 rounded-full top-10 left-1/2 -translate-x-1/2 -translate-y-2.5 animate-pulse"></div>
                 </div>
                 <div class="hidden md:block w-5/12"></div>
             </div>
 
-            <div class="flex flex-col md:flex-row items-center justify-between mb-16 md:mb-24 w-full group" data-aos="fade-up" data-aos-delay="100">
+            <div class="flex flex-col md:flex-row items-start justify-between mb-24 w-full group" data-aos="fade-up" data-aos-delay="100">
                 <div class="hidden md:block w-5/12"></div>
-                <div class="hidden md:flex w-2/12 justify-center">
-                    <div class="w-4 h-4 bg-white rounded-full shadow-[0_0_15px_rgba(255,255,255,0.6)] group-hover:scale-150 transition-transform duration-300"></div>
+                 <div class="hidden md:flex w-2/12 justify-center relative pt-10">
+                    <div class="w-3 h-3 bg-white rounded-full shadow-[0_0_20px_rgba(255,255,255,0.8)] group-hover:scale-125 transition-transform duration-500 relative z-10"></div>
+                    <div class="absolute w-8 h-8 bg-white/10 rounded-full top-10 left-1/2 -translate-x-1/2 -translate-y-2.5 animate-pulse"></div>
                 </div>
-                <div class="w-full md:w-5/12 text-center md:text-left md:pl-12">
-                    <div class="inline-flex border border-white/20 rounded-2xl w-20 h-20 mb-6 items-center justify-center bg-white/5 group-hover:bg-white/10 transition-colors duration-300 shadow-lg">
-                        <span class="text-2xl">📱</span>
+                <div class="w-full md:w-5/12 text-center md:text-left md:pl-16">
+                    <div class="inline-flex border border-white/10 rounded-3xl w-24 h-24 mb-8 items-center justify-center bg-white/5 group-hover:bg-white/10 transition-colors duration-500 shadow-2xl shadow-black/20 backdrop-blur-sm">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" class="w-10 h-10 text-white/90">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 0 1 .865-.501 48.172 48.172 0 0 0 3.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z" />
+                        </svg>
                     </div>
-                    <h3 class="font-heading text-2xl md:text-3xl mb-3">Social Media<br class="hidden md:block">Ecosystem</h3>
-                    <p class="text-sm text-gray-300 leading-relaxed">Consistency is key. We leverage AI to accelerate content creation while our specialists ensure every post remains perfectly aligned with your identity.</p>
+                    <h3 class="font-heading text-3xl mb-4 font-normal">Social Ecosystem</h3>
+                    <p class="text-base text-white/70 leading-loose font-light">Leveraging AI to accelerate content production while specialists ensure every asset remains perfectly aligned with your brand DNA.</p>
                 </div>
             </div>
 
-            <div class="flex flex-col md:flex-row items-center justify-between mb-16 md:mb-24 w-full group" data-aos="fade-up">
-                <div class="w-full md:w-5/12 text-center md:text-right md:pr-12 mb-6 md:mb-0">
-                    <div class="inline-flex border border-white/20 rounded-2xl w-20 h-20 mb-6 items-center justify-center bg-white/5 group-hover:bg-white/10 transition-colors duration-300 shadow-lg">
-                        <span class="text-2xl">📸</span>
+            <div class="flex flex-col md:flex-row items-start justify-between mb-24 w-full group" data-aos="fade-up">
+                <div class="w-full md:w-5/12 text-center md:text-right md:pr-16 mb-10 md:mb-0">
+                    <div class="inline-flex border border-white/10 rounded-3xl w-24 h-24 mb-8 items-center justify-center bg-white/5 group-hover:bg-white/10 transition-colors duration-500 shadow-2xl shadow-black/20 backdrop-blur-sm">
+                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" class="w-10 h-10 text-white/90">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M6.827 6.175A2.31 2.31 0 0 1 5.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 0 0-1.134-.175 2.31 2.31 0 0 1-1.64-1.055l-.822-1.316a2.192 2.192 0 0 0-1.736-1.039 48.774 48.774 0 0 0-5.232 0 2.192 2.192 0 0 0-1.736 1.039l-.821 1.316Z" />
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 12.75a4.5 4.5 0 1 1-9 0 4.5 4.5 0 0 1 9 0Z" />
+                        </svg>
                     </div>
-                    <h3 class="font-heading text-2xl md:text-3xl mb-3">AI Photography</h3>
-                    <p class="text-sm text-gray-300 leading-relaxed">Elevate ordinary product shots into stunning commercial imagery. Through AI enhancement and expert retouching, we perfect lighting and composition.</p>
+                    <h3 class="font-heading text-3xl mb-4 font-normal">AI Photography</h3>
+                    <p class="text-base text-white/70 leading-loose font-light">Elevating product imagery into stunning commercial visuals through AI enhancement, expert composition, and lighting refinement.</p>
                 </div>
-                <div class="hidden md:flex w-2/12 justify-center">
-                    <div class="w-4 h-4 bg-white rounded-full shadow-[0_0_15px_rgba(255,255,255,0.6)] group-hover:scale-150 transition-transform duration-300"></div>
+                 <div class="hidden md:flex w-2/12 justify-center relative pt-10">
+                    <div class="w-3 h-3 bg-white rounded-full shadow-[0_0_20px_rgba(255,255,255,0.8)] group-hover:scale-125 transition-transform duration-500 relative z-10"></div>
+                    <div class="absolute w-8 h-8 bg-white/10 rounded-full top-10 left-1/2 -translate-x-1/2 -translate-y-2.5 animate-pulse"></div>
                 </div>
                 <div class="hidden md:block w-5/12"></div>
             </div>
             
-            <div class="flex flex-col md:flex-row items-center justify-between mb-16 md:mb-24 w-full group" data-aos="fade-up" data-aos-delay="100">
+            <div class="flex flex-col md:flex-row items-start justify-between w-full group" data-aos="fade-up" data-aos-delay="100">
                 <div class="hidden md:block w-5/12"></div>
-                <div class="hidden md:flex w-2/12 justify-center">
-                    <div class="w-4 h-4 bg-white rounded-full shadow-[0_0_15px_rgba(255,255,255,0.6)] group-hover:scale-150 transition-transform duration-300"></div>
+                 <div class="hidden md:flex w-2/12 justify-center relative pt-10">
+                    <div class="w-3 h-3 bg-white rounded-full shadow-[0_0_20px_rgba(255,255,255,0.8)] group-hover:scale-125 transition-transform duration-500 relative z-10"></div>
+                    <div class="absolute w-8 h-8 bg-white/10 rounded-full top-10 left-1/2 -translate-x-1/2 -translate-y-2.5 animate-pulse"></div>
                 </div>
-                <div class="w-full md:w-5/12 text-center md:text-left md:pl-12">
-                    <div class="inline-flex border border-white/20 rounded-2xl w-20 h-20 mb-6 items-center justify-center bg-white/5 group-hover:bg-white/10 transition-colors duration-300 shadow-lg">
-                        <span class="text-2xl">🎥</span>
+                <div class="w-full md:w-5/12 text-center md:text-left md:pl-16">
+                    <div class="inline-flex border border-white/10 rounded-3xl w-24 h-24 mb-8 items-center justify-center bg-white/5 group-hover:bg-white/10 transition-colors duration-500 shadow-2xl shadow-black/20 backdrop-blur-sm">
+                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" class="w-10 h-10 text-white/90">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="m15.75 10.5 4.72-4.72a.75.75 0 0 1 1.28.53v11.38a.75.75 0 0 1-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 0 0 2.25-2.25v-9a2.25 2.25 0 0 0-2.25-2.25h-9A2.25 2.25 0 0 0 2.25 7.5v9a2.25 2.25 0 0 0 2.25 2.25Z" />
+                        </svg>
                     </div>
-                    <h3 class="font-heading text-2xl md:text-3xl mb-3">Dynamic Videography</h3>
-                    <p class="text-sm text-gray-300 leading-relaxed">Turn static elements into dynamic, commercial-grade videos. We develop compelling hooks and seamless motion graphics to ensure your message drives real action.</p>
+                    <h3 class="font-heading text-3xl mb-4 font-normal">Motion & Short-Form</h3>
+                    <p class="text-base text-white/70 leading-loose font-light">From commercial-grade video to viral-worthy Reels and TikToks. We handle concepts, hooks, and execution for maximum engagement.</p>
                 </div>
-            </div>
-
-            <div class="flex flex-col md:flex-row items-center justify-between w-full group" data-aos="fade-up">
-                <div class="w-full md:w-5/12 text-center md:text-right md:pr-12 mb-6 md:mb-0">
-                    <div class="inline-flex border border-white/20 rounded-2xl w-20 h-20 mb-6 items-center justify-center bg-white/5 group-hover:bg-white/10 transition-colors duration-300 shadow-lg">
-                        <span class="text-2xl">🚀</span>
-                    </div>
-                    <h3 class="font-heading text-2xl md:text-3xl mb-3">Short-Form Content</h3>
-                    <p class="text-sm text-gray-300 leading-relaxed">Dominate TikTok and Reels. We guide you entirely from brainstorming engaging storylines to selecting trending audio and executing viral-worthy content.</p>
-                </div>
-                <div class="hidden md:flex w-2/12 justify-center">
-                    <div class="w-4 h-4 bg-white rounded-full shadow-[0_0_15px_rgba(255,255,255,0.6)] group-hover:scale-150 transition-transform duration-300"></div>
-                </div>
-                <div class="hidden md:block w-5/12"></div>
             </div>
         </div>
     </section>
 
-    <section id="works" class="py-24 bg-gradient-to-b from-[#1B3C2D] to-[#F4F6F4] text-center px-6">
-        <div class="max-w-3xl mx-auto mb-16" data-aos="fade-up">
-            <h2 class="font-heading text-4xl md:text-5xl text-white mb-6">Featured Projects</h2>
-            <p class="text-gray-200 text-base leading-relaxed mb-10">
-                Explore our portfolio to see how strategic thinking, AI technology, and scroll-stopping visuals have elevated our clients' digital presence.
+    <section id="works" class="py-32 bg-base-light text-center px-8 relative">
+        <div class="max-w-3xl mx-auto mb-20" data-aos="fade-up">
+            <h2 class="font-heading text-5xl text-dark-green mb-8 font-normal">Featured Work</h2>
+            <p class="text-gray-600 text-lg leading-relaxed font-light">
+                A curation of projects where strategic thinking and AI-enhanced visuals convened to elevate digital presence.
             </p>
         </div>
 
-        <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-            <div class="group bg-white h-72 flex flex-col items-center justify-center rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer overflow-hidden border border-gray-100 relative" data-aos="fade-up" data-aos-delay="0">
-                <div class="absolute inset-0 bg-gray-100 group-hover:scale-105 transition-transform duration-500"></div>
-                <span class="text-gray-500 font-medium z-10 bg-white/80 px-4 py-2 rounded-full backdrop-blur-sm">Campaign 1</span>
+        <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+            <div class="group h-[26rem] rounded-[2rem] overflow-hidden relative shadow-md hover:shadow-2xl transition-all duration-500 cursor-pointer" data-aos="fade-up">
+                <div class="absolute inset-0 image-placeholder-gradient group-hover:scale-105 transition-transform duration-700"></div>
+                <div class="absolute inset-0 bg-dark-green/20 group-hover:bg-dark-green/40 transition-colors duration-500 flex flex-col justify-end p-8 text-left">
+                    <span class="text-white/80 text-sm tracking-wider uppercase mb-2 font-medium">Brand Campaign</span>
+                    <h3 class="text-white font-heading text-2xl">Project Alpha</h3>
+                </div>
             </div>
-            <div class="group bg-white h-72 flex flex-col items-center justify-center rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer overflow-hidden border border-gray-100 relative" data-aos="fade-up" data-aos-delay="100">
-                <div class="absolute inset-0 bg-gray-100 group-hover:scale-105 transition-transform duration-500"></div>
-                <span class="text-gray-500 font-medium z-10 bg-white/80 px-4 py-2 rounded-full backdrop-blur-sm">Campaign 2</span>
+            <div class="group h-[26rem] rounded-[2rem] overflow-hidden relative shadow-md hover:shadow-2xl transition-all duration-500 cursor-pointer" data-aos="fade-up" data-aos-delay="100">
+                 <div class="absolute inset-0 image-placeholder-gradient group-hover:scale-105 transition-transform duration-700" style="animation-delay: 1s;"></div>
+                <div class="absolute inset-0 bg-dark-green/20 group-hover:bg-dark-green/40 transition-colors duration-500 flex flex-col justify-end p-8 text-left">
+                    <span class="text-white/80 text-sm tracking-wider uppercase mb-2 font-medium">AI Content</span>
+                    <h3 class="text-white font-heading text-2xl">Studio Beta</h3>
+                </div>
             </div>
-            <div class="group bg-white h-72 flex flex-col items-center justify-center rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer overflow-hidden border border-gray-100 relative" data-aos="fade-up" data-aos-delay="200">
-                <div class="absolute inset-0 bg-gray-100 group-hover:scale-105 transition-transform duration-500"></div>
-                <span class="text-gray-500 font-medium z-10 bg-white/80 px-4 py-2 rounded-full backdrop-blur-sm">Campaign 3</span>
-            </div>
-            <div class="group bg-dark-green h-72 flex flex-col items-center justify-center rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-pointer overflow-hidden relative" data-aos="fade-up" data-aos-delay="300">
-                <span class="text-white font-medium text-lg z-10 flex items-center gap-2">View All <span class="group-hover:translate-x-2 transition-transform duration-300">➔</span></span>
+            <div class="group h-[26rem] rounded-[2rem] overflow-hidden relative shadow-md hover:shadow-2xl transition-all duration-500 cursor-pointer md:col-span-1 sm:col-span-2" data-aos="fade-up" data-aos-delay="200">
+                 <div class="absolute inset-0 image-placeholder-gradient group-hover:scale-105 transition-transform duration-700" style="animation-delay: 2s;"></div>
+                <div class="absolute inset-0 bg-dark-green/20 group-hover:bg-dark-green/40 transition-colors duration-500 flex flex-col justify-end p-8 text-left">
+                    <span class="text-white/80 text-sm tracking-wider uppercase mb-2 font-medium">Social Strategy</span>
+                    <h3 class="text-white font-heading text-2xl">Gamma Collective</h3>
+                </div>
             </div>
         </div>
+         <div class="mt-16" data-aos="fade-up">
+            <button class="group border border-[#1A382A]/30 hover:border-[#1A382A] text-dark-green px-12 py-4 rounded-full text-sm font-medium tracking-wider inline-flex items-center justify-center gap-3 transition-all duration-300 bg-transparent hover:bg-[#1A382A]/5">
+                View Full Portfolio
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 group-hover:translate-x-2 transition-transform duration-300">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+                </svg>
+            </button>
+         </div>
     </section>
 
-    <section id="contact" class="max-w-6xl mx-auto px-6 py-24 flex flex-col md:flex-row items-center gap-16 justify-between">
+    <section id="contact" class="max-w-6xl mx-auto px-8 py-32 flex flex-col md:flex-row items-center gap-20 justify-between relative">
         <div class="w-full md:w-1/2 flex justify-center" data-aos="fade-right">
-            <div class="w-full max-w-sm h-64 border border-gray-200 bg-white rounded-[2rem] flex flex-col items-center justify-center relative shadow-xl shadow-gray-200/50 p-8 text-center">
-                <div class="absolute -top-6 -left-6 w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center text-xl">💡</div>
-                <span class="text-dark-green text-5xl mb-6 block">🤝</span>
-                <span class="text-dark-green text-2xl font-heading font-medium">Ready to scale?</span>
-                <p class="text-sm text-gray-500 mt-2">Let's build something great.</p>
+            <div class="w-full max-w-md aspect-square border-2 border-dark-green/10 bg-white rounded-[3rem] flex flex-col items-center justify-center relative shadow-2xl shadow-dark-green/5 p-12 text-center group overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-tr from-dark-green/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                <div class="w-24 h-24 bg-dark-green/5 rounded-3xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" class="w-12 h-12 text-dark-green">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 0 1-.825-.242m9.345-8.334a2.126 2.126 0 0 0-.476-.095 48.64 48.64 0 0 0-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0 0 11.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155" />
+                    </svg>
+                </div>
+                <span class="text-dark-green text-3xl font-heading font-medium mb-2">Initiate Dialogue</span>
+                <p class="text-gray-500 font-light leading-relaxed">Explore how AI-driven creativity aligns with your ambitious goals.</p>
             </div>
         </div>
-        <div class="w-full md:w-1/2 text-center md:text-left" data-aos="fade-left">
-            <h2 class="text-dark-green font-heading text-4xl md:text-5xl mb-6 leading-tight">Book a Free<br>Discovery Call</h2>
-            <p class="text-base text-gray-600 mb-10 leading-relaxed max-w-md mx-auto md:mx-0">
-                Let's discuss how our AI-powered creative engine can streamline your workflow and help your brand achieve its goals faster.
+        <div class="w-full md:w-1/2 text-center md:text-left" data-aos="fade-up">
+            <h2 class="text-dark-green font-heading text-5xl md:text-6xl mb-8 leading-tight font-normal">Schedule a<br>Discovery Session</h2>
+            <p class="text-lg text-gray-600 mb-12 leading-loose font-light max-w-lg mx-auto md:mx-0">
+                Let's define the future of your brand's content strategy together. Efficient, scalable, and unmistakably premium.
             </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                <button class="bg-[#1B3C2D] hover:bg-[#122b20] transition-all duration-300 text-white px-8 py-4 rounded-full text-sm font-medium shadow-lg hover:shadow-xl hover:-translate-y-0.5">Schedule a Meeting</button>
-                <button class="bg-white border border-[#1B3C2D] hover:bg-gray-50 transition-all duration-300 text-dark-green px-8 py-4 rounded-full text-sm font-medium flex items-center justify-center gap-2 hover:-translate-y-0.5">
-                    <span class="text-green-600 text-lg">📱</span>
-                    <span>Chat on WhatsApp</span>
+            <div class="flex flex-col sm:flex-row gap-5 justify-center md:justify-start">
+                <button class="bg-[#1A382A] hover:bg-[#12281e] transition-all duration-300 text-white px-10 py-5 rounded-full text-sm font-medium tracking-wider shadow-xl hover:-translate-y-1">Book Your Call</button>
+                <button class="bg-white border-2 border-[#1A382A]/10 hover:border-[#1A382A] transition-all duration-300 text-dark-green px-10 py-5 rounded-full text-sm font-medium tracking-wider flex items-center justify-center gap-3 hover:-translate-y-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
+                    </svg>
+                    <span>Direct Inquiry</span>
                 </button>
             </div>
         </div>
@@ -205,25 +261,23 @@
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // Initialize Animations
+        // Initialize Animations dengan setting yang lebih smooth
         AOS.init({
-            once: true, // Animasi hanya berjalan sekali saat di-scroll
-            offset: 50, // Muncul sedikit lebih cepat sebelum elemen masuk layar
-            duration: 800, // Durasi animasi
-            easing: 'ease-out-cubic',
+            once: true,
+            offset: 100,
+            duration: 1000,
+            easing: 'ease-out-quart', // Easing yang lebih elegan
         });
 
-        // Script untuk Navbar (Glassmorphism on Scroll)
+        // Navbar Script (Lebih halus transisinya)
         const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 20) {
-                navbar.classList.add('bg-base-light/80', 'backdrop-blur-md', 'shadow-sm');
-                navbar.classList.remove('py-5');
-                navbar.classList.add('py-3');
+            if (window.scrollY > 30) {
+                navbar.classList.add('bg-[#F8F9F8]/90', 'backdrop-blur-lg', 'shadow-sm', 'py-4');
+                navbar.classList.remove('py-6');
             } else {
-                navbar.classList.remove('bg-base-light/80', 'backdrop-blur-md', 'shadow-sm');
-                navbar.classList.remove('py-3');
-                navbar.classList.add('py-5');
+                navbar.classList.remove('bg-[#F8F9F8]/90', 'backdrop-blur-lg', 'shadow-sm', 'py-4');
+                navbar.classList.add('py-6');
             }
         });
     </script>
